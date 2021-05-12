@@ -12,6 +12,10 @@ nav li:last-child a{
     }
     
 }
+a{
+    color: $dark;
+    text-decoration: none;
+}
 nav li a{
     color: $dark;
     &:hover{
@@ -24,7 +28,7 @@ section.hero{
     background: $secondary;
 }
 
-section.hero button{
+.btn-primary{
     background: $primary;
     color:$pure;
     transition: $smooth;
@@ -33,6 +37,7 @@ section.hero button{
         background: $primary-hover;
     }
 }
+
 .add-to-cart {
     border: solid 2px $primary;
     color: $primary;
@@ -46,4 +51,29 @@ section.hero button{
 .size{
     background: $secondary;
     font-size: 0.75rem;
+}
+
+section.cart{
+    background: $secondary;
+}
+
+section.login{
+    background: $secondary;
+    min-height: calc(100vh - 86px);
+    transition: $smooth;
+    a{
+        color: $primary;
+        transition: $smooth;
+        &:hover{
+            color: $primary-hover;
+        }
+    }
+    button:focus{
+        outline:none;
+        box-shadow: none;
+    }
+    input[type="email"]:focus{
+        outline:none;
+        box-shadow: none;
+    }
 }

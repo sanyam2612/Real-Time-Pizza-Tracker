@@ -11,6 +11,11 @@ nav li:last-child a:hover {
   background: #b23301;
 }
 
+a {
+  color: #232323;
+  text-decoration: none;
+}
+
 nav li a {
   color: #232323;
   transition: all 0.3s ease-in-out;
@@ -23,13 +28,13 @@ section.hero {
   background: #f8f8f8;
 }
 
-section.hero button {
+.btn-primary {
   background: #fe5f1e;
   color: #fff;
   transition: all 0.3s ease-in-out;
   border: none;
 }
-section.hero button:hover {
+.btn-primary:hover {
   background: #b23301;
 }
 
@@ -47,4 +52,29 @@ section.hero button:hover {
 .size {
   background: #f8f8f8;
   font-size: 0.75rem;
+}
+
+section.cart {
+  background: #f8f8f8;
+}
+
+section.login {
+  background: #f8f8f8;
+  min-height: calc(100vh - 86px);
+  transition: all 0.3s ease-in-out;
+}
+section.login a {
+  color: #fe5f1e;
+  transition: all 0.3s ease-in-out;
+}
+section.login a:hover {
+  color: #b23301;
+}
+section.login button:focus {
+  outline: none;
+  box-shadow: none;
+}
+section.login input[type=email]:focus {
+  outline: none;
+  box-shadow: none;
 }
