@@ -1,9 +1,10 @@
 @import './variables';
-
+@import '~noty/src/noty.scss';
+@import '~noty/src/themes/mint.scss';
 body{
     font-family: 'Lato', sans-serif;
     -webkit-font-smoothing: antialised;
-    color: $dark;
+    color: $dark; 
 }
 nav li:last-child a{
     background: $primary;
@@ -47,6 +48,9 @@ section.hero{
         background: $primary;
         color: $pure;
     }
+    &:focus{
+        outline:none;
+    }
 }
 .size{
     background: $secondary;
@@ -76,4 +80,9 @@ section.login{
         outline:none;
         box-shadow: none;
     }
+}
+
+.noty_theme__mint {
+    border-radius: 50px !important;
+    padding-left: 8px !important;
 }
