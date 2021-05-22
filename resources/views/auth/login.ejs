@@ -1,30 +1,36 @@
 <section class="login d-flex justify-content-center pt-5">
 
     <div style="max-width: 20rem;">
-        <form class="bg-white shadow rounded px-4 pt-3 pb-4 mb-4">
-            <div class="mb-4">
-                <label class="d-block  fw-bold mb-2" for="username">
-                    Email
-                </label>
-                <input class="shadow  border rounded  py-2 px-3 " id="username" type="email"
-                    placeholder="Enter your email">
-            </div>
-            <div class="mb-6">
-                <label class="d-block  fw-bold mb-2" for="password">
-                    Password
-                </label>
-                <input class="shadow  border  rounded  py-2 px-3 mb-3 " id="password" type="password"
-                    placeholder="******************">
+        <form action='/login' method="POST" class="bg-white shadow rounded px-4 pt-3 pb-4 mb-4">
+            <% if(messages.error) {%>
+                <span style="color: red; font-size: 0.875rem;
+                line-height: 1.25rem;">
+                    <%= messages.error %>
+                </span>
+                <% } %>
+                    <div class="mb-4">
+                        <label class="d-block  fw-bold mb-2" for="username">
+                            Email
+                        </label>
+                        <input name="email" class="shadow  border rounded  py-2 px-3 " id="username" type="email"
+                            placeholder="Enter your email">
+                    </div>
+                    <div class="mb-6">
+                        <label class="d-block  fw-bold mb-2" for="password">
+                            Password
+                        </label>
+                        <input name="password" class="shadow  border  rounded  py-2 px-3 mb-3 " id="password"
+                            type="password" placeholder="******************">
 
-            </div>
-            <div class="d-flex align-items-center justify-content-between" style="font-size: 0.875rem;">
-                <button class=" btn-primary fw-bold py-1 px-3 rounded-pill " type=" button">
-                    Log In
-                </button>
-                <a class="d-inline-block fw-bold " href="/register">
-                    Don't have account?
-                </a>
-            </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between" style="font-size: 0.875rem;">
+                        <button class=" btn-primary fw-bold py-1 px-3 rounded-pill " type=" Submit">
+                            Log In
+                        </button>
+                        <a class="d-inline-block fw-bold " href="/register">
+                            Don't have account?
+                        </a>
+                    </div>
         </form>
 
     </div>

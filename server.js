@@ -12,6 +12,7 @@ const flash = require('express-flash')
 // To connect sessions to database
 const MongoDbStore = require('connect-mongo');
 
+const passport = require('passport')
 // Database connection
 const url = 'mongodb://localhost/pizza'
 mongoose.connect(url, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: true });
@@ -34,17 +35,29 @@ app.use(session({
     cookie: { maxAge: 1000 * 60 * 60 * 24 }
 }))
 
+// Passport config
+
+app.use(passport.initialize())
+app.use(passport.session())
+require('./app/config/passport')(passport)
+
 
 app.use(flash())
 
 
 // Assets
+// Serving static files
 app.use(express.static('public'))
+// To let know express about form data
+app.use(express.urlencoded({ extended: false }))
+// To let know express about json data
 app.use(express.json())
+
 
 // Global Middleware
 app.use((req, res, next) => {
     res.locals.session = req.session
+    res.locals.user = req.user
     next()
 })
 

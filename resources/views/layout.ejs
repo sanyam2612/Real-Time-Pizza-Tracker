@@ -23,16 +23,27 @@
             <ul class="list-unstyled d-flex align-items-center">
                 <li class="mx-3"><a class="text-decoration-none" href="/">Menu</a></li>
                 <li class="mx-3"><a class="text-decoration-none" href="#">Offers</a></li>
-                <li class="mx-3"><a class="text-decoration-none" href="/register">Register</a></li>
-                <li class="mx-3"><a class="text-decoration-none" href="/login">Login</a></li>
-                <li class="mx-3"><a class="text-decoration-none d-inline-block px-4 py-2 rounded-pill" href="/cart">
-                        <div class="d-flex justify-content-center">
-                            <span id="cartCounter" style="color: white;" class="me-2">
-                                <%= session.cart ? session.cart.totalQty : '' %>
-                            </span>
-                            <img src="/img/cart.png" alt="cart">
-                        </div>
-                    </a></li>
+                <% if (user) { %>
+
+                    <li class="mx-3">
+                        <form id="logout" action="/logout" method="POST">
+                            <a onclick="document.getElementById('logout').submit()" class="text-decoration-none"
+                                href="#">Logout</a>
+                        </form>
+                    </li>
+                    <% } else { %>
+                        <li class="mx-3"><a class="text-decoration-none" href="/register">Register</a></li>
+                        <li class="mx-3"><a class="text-decoration-none" href="/login">Login</a></li>
+                        <% } %>
+                            <li class="mx-3"><a class="text-decoration-none d-inline-block px-4 py-2 rounded-pill"
+                                    href="/cart">
+                                    <div class="d-flex justify-content-center">
+                                        <span id="cartCounter" style="color: white;" class="me-2">
+                                            <%= session.cart ? session.cart.totalQty : '' %>
+                                        </span>
+                                        <img src="/img/cart.png" alt="cart">
+                                    </div>
+                                </a></li>
             </ul>
         </div>
     </nav>
