@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 3000
 const mongoose = require('mongoose')
 const session = require('express-session')
 const flash = require('express-flash')
+const moment = require('moment')
 
 // To connect sessions to database
 const MongoDbStore = require('connect-mongo');

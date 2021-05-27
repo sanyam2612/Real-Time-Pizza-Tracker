@@ -363,3 +363,7 @@ section.login input[type=email]:focus {
   border-radius: 50px !important;
   padding-left: 8px !important;
 }
+
+a.link {
+  color: #fe5f1e;
+}
