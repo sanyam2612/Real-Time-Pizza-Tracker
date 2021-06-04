@@ -17,7 +17,8 @@
     "mongoose": "^5.12.8",
     "noty": "*",
     "passport": "^0.4.1",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "socket.io": "^4.1.2"
   },
   "devDependencies": {
     "laravel-mix": "^6.0.19",
